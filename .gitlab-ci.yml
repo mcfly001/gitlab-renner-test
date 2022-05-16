@@ -1,0 +1,33 @@
+# 阶段
+stages:
+  - build
+  - deploy
+  # 缓存 node_modules 减少打包时间，默认会清除 node_modules 和 dist 
+cache:
+  paths:
+    - node_modules/
+
+# 拉取项目，打包
+build:
+  stage: build # 阶段名称 对应，stages
+  tags: # runner 标签(注册runner时设置的，可在 admin->runner中查看)
+    - commit-rule-tag
+  script: # 脚本（执行的命令行）
+    - echo `pwd`
+    - cd ${CI_PROJECT_DIR} # 拉取项目的根目录
+    - npm install # 安装依赖
+    - npm run build # 运行构建命令
+  only:
+    - test #拉取分支
+  artifacts:   # 把 dist 的内容传递给下一个阶
+    paths:
+        - dist/
+
+# 部署
+deploy:
+  stage: deploy # 阶段名称 对应，stages
+  tags: # runner 标签(注册runner时设置的)
+    - commit-rule-tag
+  script: # 脚本（执行的命令行）
+    - rm -rf /www/wwwroot/webpack_vue_cicd/*
+    - cp -rf ${CI_PROJECT_DIR}/dist/* /www/wwwroot/webpack_vue_cicd/ # 把包完成，复制 dist 下的文件到对应的项目位置
