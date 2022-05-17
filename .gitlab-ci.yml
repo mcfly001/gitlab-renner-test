@@ -21,7 +21,7 @@ install_deps_job:
   script:
     - echo '开始安装依赖'
     - npm install
-   
+    - echo $(cat ./.git/HEAD)
   tags:
     - docker-gitlab-runner-2
 
@@ -44,6 +44,7 @@ deploy_prod_job:
   script:
     - echo `pwd`
     - echo '部署生产环境阶段'
+    - echo mv build /root
   tags:
     - docker-gitlab-runner-2
 
