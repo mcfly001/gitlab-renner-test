@@ -25,7 +25,7 @@ install_deps_job:
     - npm install
    
   tags:
-    - gitlab-runner-tag
+    - gitlab11-runner-tag
 
 # 构建预prod环境src目录下应用
 build_prod_job:
@@ -37,7 +37,7 @@ build_prod_job:
     - ll -a
     - npm run build
   tags:
-    - gitlab-runner-tag
+    - gitlab11-runner-tag
 
 # 部署生产环境
 deploy_prod_job:
@@ -47,5 +47,5 @@ deploy_prod_job:
   script:
     - echo '部署生产环境阶段'
   tags:
-    - gitlab-runner-tag
+    - gitlab11-runner-tag
 
