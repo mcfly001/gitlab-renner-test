@@ -31,7 +31,7 @@ build_prod_job:
   only:
     - main
   script:
-    - echo '开始打包'
+    - echo '开始进行打包'
     - ll -a
     - npm run build
   tags:
