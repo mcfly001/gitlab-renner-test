@@ -21,9 +21,7 @@ install_deps_job:
   script:
     - echo '开始安装依赖'
     - echo `pwd`
-    - cd ${CI_BUILD_REF_NAME}
     - npm install
-    - npm run build
    
   tags:
     - gitlab-runner-tag
@@ -34,8 +32,9 @@ build_prod_job:
   only:
     - main
   script:
-    - echo '构建预prod环境src目录下应用阶段'
+    - echo '开始打包'
     - ll -a
+    - npm run build
   tags:
     - gitlab-runner-tag
 
