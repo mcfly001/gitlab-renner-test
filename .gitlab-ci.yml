@@ -20,6 +20,7 @@ install_deps_job:
     - main
   script:
     - echo '开始安装依赖'
+    - echo `pwd`
     - cd ${CI_BUILD_REF_NAME}
     - npm install
     - npm run build
