@@ -1,33 +1,45 @@
-# 阶段
+# 定义 stages（阶段，会依次执行）
 stages:
-  - build
-  - deploy
-  # 缓存 node_modules 减少打包时间，默认会清除 node_modules 和 dist 
+  - install_deps
+  - build_prod
+  - deploy_prod
+
 cache:
+  key: ${CI_BUILD_REF_NAME}
   paths:
     - node_modules/
+    - dist
 
-# 拉取项目，打包
-build:
-  stage: build # 阶段名称 对应，stages
-  tags: # runner 标签(注册runner时设置的，可在 admin->runner中查看)
-    - commit-rule-tag
-  script: # 脚本（执行的命令行）
-    - echo `pwd`
-    - cd ${CI_PROJECT_DIR} # 拉取项目的根目录
-    - npm install # 安装依赖
-    - npm run build # 运行构建命令
+# 安装构建依赖
+install_deps_job:
+  stage: install_deps
+  # 在哪个分支才会执行脚本
   only:
-    - test #拉取分支
-  artifacts:   # 把 dist 的内容传递给下一个阶
-    paths:
-        - dist/
+    # - dev
+    # - release
+    - main
+  script:
+    - echo '模拟安装构建依赖阶段'
+  tags:
+    - gitlab-runner-tag
 
-# 部署
-deploy:
-  stage: deploy # 阶段名称 对应，stages
-  tags: # runner 标签(注册runner时设置的)
-    - commit-rule-tag
-  script: # 脚本（执行的命令行）
-    - rm -rf /www/wwwroot/webpack_vue_cicd/*
-    - cp -rf ${CI_PROJECT_DIR}/dist/* /www/wwwroot/webpack_vue_cicd/ # 把包完成，复制 dist 下的文件到对应的项目位置
+# 构建预prod环境src目录下应用
+build_prod_job:
+  stage: build_prod
+  only:
+    - main
+  script:
+    - echo '构建预prod环境src目录下应用阶段'
+  tags:
+    - gitlab-runner-tag
+
+# 部署生产环境
+deploy_prod_job:
+  stage: deploy_prod
+  only:
+    - main
+  script:
+    - echo '部署生产环境阶段'
+  tags:
+    - gitlab-runner-tag
+
