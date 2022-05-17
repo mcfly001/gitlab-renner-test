@@ -19,7 +19,7 @@ install_deps_job:
     # - release
     - main
   script:
-    - echo '开始安装依赖1'
+    - echo '开始安装依赖'
     - echo `pwd`
     - node --version
     # - npm install
