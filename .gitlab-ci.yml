@@ -21,8 +21,8 @@ install_deps_job:
   script:
     - echo '开始安装依赖'
     - echo `pwd`
-    # - node --version
-    # - npm install
+    - node --version
+    - npm install
    
   tags:
     - docker-gitlab-runner-2
