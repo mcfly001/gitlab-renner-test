@@ -21,7 +21,7 @@ install_deps_job:
   script:
     - echo '开始安装依赖1'
     - echo `pwd`
-    - node --version
+    - sudo node --version
     - npm install
    
   tags:
