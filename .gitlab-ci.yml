@@ -8,7 +8,6 @@ cache:
   key: ${CI_BUILD_REF_NAME}
   paths:
     - node_modules/
-    - dist
 
 # 安装构建依赖
 install_deps_job:
@@ -21,7 +20,8 @@ install_deps_job:
   script:
     - echo '开始安装依赖'
     - npm install
-    - echo $(cat ./.git/HEAD)
+    - echo `cat ./.git/HEAD`
+    - echo '获取git分支结束'
   tags:
     - docker-gitlab-runner-2
 
