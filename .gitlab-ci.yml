@@ -19,6 +19,7 @@ install_deps_job:
     # - release
     - main
   script:
+    - echo ${CI_BUILD_REF_NAME}
     - echo '模拟安装构建依赖阶段'
   tags:
     - gitlab-runner-tag
