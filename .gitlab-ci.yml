@@ -20,7 +20,6 @@ install_deps_job:
     - main
   script:
     - echo '开始安装依赖'
-    - echo `pwd`
     - npm install
    
   tags:
