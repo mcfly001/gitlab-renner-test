@@ -1,3 +1,4 @@
+image: registry.huajiao.com/gitlab-ci/node-yarn:v1.4
 # 定义 stages（阶段，会依次执行）
 stages:
   - install_deps
