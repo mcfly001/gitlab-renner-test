@@ -34,8 +34,7 @@ build_prod_job:
     - main
   script:
     - echo '开始进行打包'
-    - ll -a
-    # - npm run build
+    - npm run build
   tags:
     - docker-gitlab-runner-2
 
