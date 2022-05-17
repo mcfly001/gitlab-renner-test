@@ -19,8 +19,11 @@ install_deps_job:
     # - release
     - main
   script:
-    - echo ${CI_BUILD_REF_NAME}
-    - echo '模拟安装构建依赖阶段'
+    - echo '开始安装依赖'
+    - cd ${CI_BUILD_REF_NAME}
+    - npm install
+    - npm run build
+   
   tags:
     - gitlab-runner-tag
 
@@ -31,6 +34,7 @@ build_prod_job:
     - main
   script:
     - echo '构建预prod环境src目录下应用阶段'
+    - ll -a
   tags:
     - gitlab-runner-tag
 
