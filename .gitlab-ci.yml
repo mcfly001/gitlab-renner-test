@@ -1,6 +1,6 @@
 variables:
   # 定义构建的Tag
-  TAG: "gitlan-runner-tag-no2"
+  TAG: "gitlan-runner-tag-no3"
 
 # 定义 stages（阶段，会依次执行）
 stages:
