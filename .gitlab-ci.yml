@@ -1,4 +1,4 @@
-variables
+variables:
   # 定义构建的Tag
   TAG: gitlab-runner-tag-no2 
 
