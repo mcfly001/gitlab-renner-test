@@ -24,6 +24,7 @@ install_deps_job:
   script:
     - echo '开始安装依赖'
     - npm install
+    - echo `node --version`
     - echo `cat ./.git/HEAD`
     - echo '获取git分支结束'
   tags:
