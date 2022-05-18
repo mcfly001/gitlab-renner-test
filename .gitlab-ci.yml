@@ -1,6 +1,6 @@
 variables:
   # 定义构建的Tag
-  TAG: "gitlab-runner-tag-no3"
+  TAG: "gitlab-runner-tag3-no3"
 
 # 定义 stages（阶段，会依次执行）
 stages:
