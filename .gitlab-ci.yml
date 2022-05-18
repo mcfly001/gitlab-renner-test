@@ -1,3 +1,7 @@
+variables
+  # 定义构建的Tag
+  TAG: gitlab-runner-tag-no2 
+
 # 定义 stages（阶段，会依次执行）
 stages:
   - install_deps
@@ -23,7 +27,7 @@ install_deps_job:
     - echo `cat ./.git/HEAD`
     - echo '获取git分支结束'
   tags:
-    - gitlab-runner-tag-no1
+    - $TAG
 
 # 构建预prod环境src目录下应用
 build_prod_job:
@@ -34,7 +38,7 @@ build_prod_job:
     - echo '开始进行打包'
     - npm run build
   tags:
-    - gitlab-runner-tag-no1
+    - $TAG
 
 # 部署生产环境
 deploy_prod_job:
@@ -46,5 +50,5 @@ deploy_prod_job:
     - echo '部署生产环境阶段'
     - echo mv build /root
   tags:
-    - gitlab-runner-tag-no1
+    - $TAG
 
