@@ -23,7 +23,7 @@ install_deps_job:
     - echo `cat ./.git/HEAD`
     - echo '获取git分支结束'
   tags:
-    - docker-gitlab-runner-2
+    - gitlab-runner-tag-no1
 
 # 构建预prod环境src目录下应用
 build_prod_job:
@@ -34,7 +34,7 @@ build_prod_job:
     - echo '开始进行打包'
     - npm run build
   tags:
-    - docker-gitlab-runner-2
+    - gitlab-runner-tag-no1
 
 # 部署生产环境
 deploy_prod_job:
@@ -46,5 +46,5 @@ deploy_prod_job:
     - echo '部署生产环境阶段'
     - echo mv build /root
   tags:
-    - docker-gitlab-runner-2
+    - gitlab-runner-tag-no1
 
