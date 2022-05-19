@@ -1,6 +1,6 @@
 variables:
   # 定义构建的Tag
-  TAG: "runner-no1"
+  TAG: "dockersock"
 
 # 定义 stages（阶段，会依次执行）
 stages:
