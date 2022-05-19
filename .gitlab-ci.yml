@@ -55,7 +55,7 @@ deploy_prod_job:
     - echo `pwd`
     - echo '部署生产环境阶段'
     - echo `ls -a`
-    - echo mv .gitlab-ci.yml /root
+    - mv .gitlab-ci.yml /root
   tags:
     - $TAG
 
