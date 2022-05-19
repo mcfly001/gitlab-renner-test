@@ -51,6 +51,7 @@ deploy_prod_job:
   script:
     - echo `pwd`
     - echo '部署生产环境阶段'
+    - echo `ls -a`
     - echo mv build /root
   tags:
     - $TAG
