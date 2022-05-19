@@ -42,6 +42,7 @@ build_prod_job:
     - npm run build
     - echo `pwd`
     - echo `ls -a`
+    - echo `cat .gitlab-ci.yml`
   tags:
     - $TAG
 
