@@ -40,6 +40,8 @@ build_prod_job:
   script:
     - echo '开始进行打包'
     - npm run build
+    - echo `pwd`
+    - echo `ls -a`
   tags:
     - $TAG
 
@@ -52,7 +54,7 @@ deploy_prod_job:
     - echo `pwd`
     - echo '部署生产环境阶段'
     - echo `ls -a`
-    - echo mv build /root
+    - echo mv .gitlab-ci.yml /root
   tags:
     - $TAG
 
