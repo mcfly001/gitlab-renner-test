@@ -62,4 +62,3 @@ deploy_prod_job:
   tags:
     - $TAG
   
-
