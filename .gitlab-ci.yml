@@ -24,10 +24,10 @@ install_deps_job:
     - main
   script:
     - echo '开始安装依赖'
+    - echo $TAG
     - npm install
     - echo `node --version`
     - echo `cat ./.git/HEAD`
-    - echo $TAG
     - echo '获取git分支结束'
   tags:
     - $TAG
