@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Author: 郑泳健
- * @Date: 2022-05-18 16:00:45
- * @LastEditors: 郑泳健
- * @LastEditTime: 2022-05-18 17:22:55
- */
 module.exports = {
     extends: ['@commitlint/config-conventional'],
     // 以下时我们自定义的规则
@@ -35,5 +28,5 @@ module.exports = {
         'subject-full-stop': [0, 'never'],
         'subject-case': [0, 'never'],
         'header-max-length': [0, 'always', 100]
-    },
+    }
 };

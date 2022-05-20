@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Description: 入口
+ * @Author: 郑泳健
+ * @Date: 2022-05-16 17:55:09
+ * @LastEditors: 郑泳健
+ * @LastEditTime: 2022-05-20 18:04:23
+ */
+import React from 'react';
+import './index.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return <div className="warn-statistics-wrapper">11</div>;
 }
 
 export default App;

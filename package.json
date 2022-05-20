@@ -17,7 +17,8 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "prepare": "husky install",
-        "changeLog": "rm -rf CHANGELOG.md && conventional-changelog -p angular -i CHANGELOG.md -s"
+        "changeLog": "rm -rf CHANGELOG.md && conventional-changelog -p angular -i CHANGELOG.md -s",
+        "eslint-fixed": "npx eslint --max-warnings 0 --fix --ext .js,.jsx,.ts,.tsx ./src"
     },
     "eslintConfig": {
         "extends": [
@@ -44,6 +45,20 @@
         "cz-customizable": "^6.3.0",
         "cz-conventional-changelog": "^3.3.0",
         "husky": "^8.0.1",
+        "eslint": "^8.15.0",
+        "eslint-config-tongdun": "^1.1.10",
+        "eslint-plugin-td-rules-plugin": "^1.0.1",
+        "lint-staged": "^12.4.1",
         "conventional-changelog-cli": "^2.2.2"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-customizable"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,ts,tsx}": [
+            "eslint --quiet --fix --ext .js,.jsx,.ts,.tsx"
+        ]
     }
 }
