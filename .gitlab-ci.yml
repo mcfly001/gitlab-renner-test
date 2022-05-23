@@ -42,7 +42,7 @@ build_prod_job:
     - npm run build
     - echo `pwd`
     - echo `ls -a`
-    - scp -r publisc root@43.142.11.109:/usr/local/tomcat/webapps/fed
+    - scp -r build root@43.142.11.109:/usr/local/tomcat/webapps/
     - expect "root@$43.142.11.109's password:"
     - send Zhe123456
   tags:
