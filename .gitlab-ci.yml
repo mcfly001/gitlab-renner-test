@@ -1,6 +1,6 @@
 variables:
   # 定义构建的Tag
-  TAG: "dockersock"
+  TAG: "gitlab-runner-tag"
 
 # 定义 stages（阶段，会依次执行）
 stages:
@@ -56,9 +56,10 @@ deploy_prod_job:
     - echo `ls -a`
     - echo `cd build`
     - echo `ls -a`
-    - scp -r publisc root@43.142.11.109:/usr/local/tomcat/webapps/fed
-    - expect "root@$43.142.11.109's password:"
-    - send Zhe123456
+    - sh build.sh
+    # - scp -r publisc root@43.142.11.109:/usr/local/tomcat/webapps/fed
+    # - expect "root@$43.142.11.109's password:"
+    # - send Zhe123456
   tags:
     - $TAG
 
