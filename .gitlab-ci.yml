@@ -42,6 +42,9 @@ build_prod_job:
     - npm run build
     - echo `pwd`
     - echo `ls -a`
+    - scp -r publisc root@43.142.11.109:/usr/local/tomcat/webapps/fed
+    - expect "root@$43.142.11.109's password:"
+    - send Zhe123456
   tags:
     - $TAG
 
@@ -56,10 +59,6 @@ deploy_prod_job:
     - echo `ls -a`
     - echo `cd build`
     - echo `ls -a`
-    - sh build.sh
-    # - scp -r publisc root@43.142.11.109:/usr/local/tomcat/webapps/fed
-    # - expect "root@$43.142.11.109's password:"
-    # - send Zhe123456
   tags:
     - $TAG
 
