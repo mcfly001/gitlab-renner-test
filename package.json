@@ -59,9 +59,7 @@
     },
     "lint-staged": {
         "src/**/*.{js,jsx,ts,tsx}": [
-            "eslint --quiet --fix --ext .js,.jsx,.ts,.tsx",
-            "npm run changeLog",
-            "git add ./CHANGELOG.md"
+            "eslint --quiet --fix --ext .js,.jsx,.ts,.tsx"
         ]
     }
 }
